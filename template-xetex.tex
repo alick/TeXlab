@@ -1,0 +1,167 @@
+%# -*- coding: utf-8 -*-
+\documentclass[UTF8,nofonts,a4paper,hyperref,fntef]{ctexart}
+\usepackage{fontspec}
+\usepackage{xunicode,xltxtra} % for XeTeX logo
+%\usepackage{xeCJK} % called by ctex automatically
+\usepackage{CJKulem}
+
+\usepackage{graphicx}
+%\graphicspath{{dir/}}
+\usepackage{siunitx}
+
+%\usepackage{natbib}
+%\usepackage{makeidx}
+%\makeindex
+
+\usepackage{xcolor} % 使用颜色宏包
+\usepackage{listings}
+\lstset{
+language=,
+%numbers=left,
+%numberstyle=\tiny,
+tabsize=8,
+upquote=true,
+breaklines=true,
+showspaces=false,
+showstringspaces=false,
+keywordstyle=\color{blue!70},
+commentstyle=\color{red!50!green!50!blue!50},
+%stringstyle=\rmfamily\slshape\color[RGB]{128,0,0},
+stringstyle=\ttfamily\slshape\color[RGB]{128,0,0},
+rulesepcolor=\color{red!20!green!20!blue!20},
+frame=shadowbox,
+%escapeinside=``
+}
+
+\setCJKmainfont[BoldFont={SimHei},
+ItalicFont={KaiTi}]{SimSun}
+\setCJKsansfont{SimHei}
+\setCJKmonofont{FangSong}
+
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
+
+\setCJKfamilyfont{zhsong}{SimSun}
+\setCJKfamilyfont{zhhei}{SimHei}
+\setCJKfamilyfont{zhkai}{KaiTi}
+\setCJKfamilyfont{zhfs}{FangSong}
+\setCJKfamilyfont{zhli}{LiSu}
+\setCJKfamilyfont{zhyou}{YouYuan}
+
+\newcommand*{\songti}{\CJKfamily{zhsong}} % 宋体
+\newcommand*{\heiti}{\CJKfamily{zhhei}}   % 黑体
+\newcommand*{\kaishu}{\CJKfamily{zhkai}}  % 楷书
+\newcommand*{\fangsong}{\CJKfamily{zhfs}} % 仿宋
+\newcommand*{\lishu}{\CJKfamily{zhli}}    % 隶书
+\newcommand*{\youyuan}{\CJKfamily{zhyou}} % 幼圆
+
+% stolen from thuthesis.dtx
+\renewcommand\contentsname{目\hspace{1em}录}
+\renewcommand\listfigurename{插图索引}
+\renewcommand\listtablename{表格索引}
+%\renewcommand\bibname{参考文献}
+\renewcommand\indexname{索引}
+\renewcommand\figurename{图}
+\renewcommand\tablename{表}
+
+% for wide figure
+%\newenvironment{narrow}[2]{% 
+%\begin{list}{}{%
+%\setlength{\topsep}{0pt}% 
+%\setlength{\leftmargin}{#1}% 
+%\setlength{\rightmargin}{#2}% 
+%\setlength{\listparindent}{\parindent}% 
+%\setlength{\itemindent}{\parindent}% 
+%\setlength{\parsep}{\parskip}}% 
+%\item[]}{\end{list}}
+
+\hypersetup{
+pdfauthor={alick},
+pdfsubject={report},
+pdfkeywords={},
+unicode=true,
+}
+
+\punctstyle{kaiming}
+%\xeCJKsetcharclass{"0}{"2E7F}{0}
+%\xeCJKsetcharclass{"2E80}{"FFFF}{1}
+
+\begin{document}
+
+\newcommand{\thetitle }{<+标题+>}
+\hypersetup{pdftitle={\thetitle}}
+
+\title{\bfseries \thetitle}
+\author{alick}
+\date{\small \today}
+\maketitle
+%\newcommand{\ans }{\textbf{答：}}
+%\newcommand{\unit}[1]{\;\mathrm{#1}}
+
+%\tableofcontents
+
+\section{Basic}
+<+正文+>
+
+\index{rule}xx\rule[0.5ex]{1in}{1pt}xx: 1 inch
+
+xx\rule{1cm}{1pt}xx: 1 cm
+%\def\pangram{The five boxing wizards jump quickly.\\}
+\section{math}
+%\[
+%  \lim_{x \to a} \frac{f(x) - f(a)}{x - a}
+%\]
+
+{\boldmath
+$$ X \rightarrow \mathrm{X} \rightarrow \mathbf{X} $$
+}
+
+\section{中文}
+
+%\TeX 必读书目：\cite{tex}。
+
+中文排版，中English混排。FOO\texttrademark
+\index{中文}
+
+%{\fangsong 中文排版，中English混排。}
+%\CJKunderline{中文排版，中English混排。}
+%\CJKunderwave{中文排版，中English混排。}
+
+\section{源程序}
+
+行内代码 \lstinline[language=Python]|str = 'inline'| 也是可以的。
+
+% A float listing example
+%\begin{lstlisting}[float,caption=A floating example,language=Pascal]
+%for i:=maxint to 0 do
+%begin
+%{ do nothing }
+%end;
+%Write('Case insensitive ');
+%WritE('Pascal keywords.');
+%\end{lstlisting}
+
+%%\lstinputlisting[language={Matlab}]{plot.m}
+
+\appendix
+
+%\printindex
+
+%\bibliographystyle{thubib}
+%\def\thudot{}
+%\bibliography{myrefs}
+
+%\listoffigures
+
+%% XeTeX version
+%%The \XeTeX\ version used to typeset this document is:
+%%\the\XeTeXversion\XeTeXrevision
+
+\end{document}
+
+%%% Local Variables:
+%%% coding: utf-8
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
+%%% vim: set sw=2 isk+=\: et tw=70 formatoptions+=mM:
