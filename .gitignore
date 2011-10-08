@@ -1,0 +1,6 @@
+*
+!template-xetex.tex
+!README
+!.gitignore
+!test-chinese.tex
+!Makefile.clean

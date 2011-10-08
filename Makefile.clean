@@ -1,0 +1,24 @@
+# Makefile for Clean mid-files of TeX
+# from thuthesis
+clean: 
+	-@rm -f \
+		*.nav \
+		*.snm \
+		*.aux \
+		*.bbl \
+		*.blg \
+		*.dvi \
+		*.glo \
+		*.gls \
+		*.idx \
+		*.ilg \
+		*.ind \
+		*.ist \
+		*.log \
+		*.out \
+		*.ps \
+		*.thm \
+		*.toc \
+		*.lof \
+		*.lot \
+		*.loe
