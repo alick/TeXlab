@@ -1,0 +1,43 @@
+% Run with pdflatex
+\documentclass[a4paper]{article}
+\usepackage{array} % for verticaly centered table cell
+\usepackage{pdflscape} % for landscape page
+\usepackage{hyperref} % for url link
+
+\begin{document}
+\pagestyle{empty} % no page number, etc
+
+\begin{landscape}
+\begin{table}[h]
+\caption{TCP Header. See also \href{http://en.wikipedia.org/wiki/%
+Transmission_Control_Protocol\#TCP_segment_structure}{Wikipedia}.}
+\begin{tabular}{|m{1.2cm}|m{8mm}|*{32}{m{2mm}|}}
+\hline
+Offsets&Octet&\multicolumn{8}{c|}{0}&\multicolumn{8}{c|}{1}&\multicolumn{8}{c|}{2}&\multicolumn{8}{c|}{3}\\
+\hline
+Octet&Bit&0&1&2&3&4&5&6&7&8&9&10&11&12&13&14&15&16%
+&17&18&19&20&21&22&23&24&25&26&27&28&29&30&31\\
+\hline
+0&0&\multicolumn{16}{c|}{Source port}&\multicolumn{16}{c|}{Destination port}\\
+\hline
+4&32&\multicolumn{32}{c|}{Sequence number}\\
+\hline
+8&64&\multicolumn{32}{c|}{Acknowledgment number (if ACK set)}\\
+\hline
+12&96&\multicolumn{4}{c|}{Data offset}&\multicolumn{3}{c|}{Reserved}%
+&N S&C W R&E C E&U R G&A C K&P S H&R S T&S Y N&F I N%
+&\multicolumn{16}{c|}{Window Size}\\
+\hline
+16&128&\multicolumn{16}{c|}{Checksum}%
+&\multicolumn{16}{c|}{Urgent pointer (if URG set)}\\
+\hline
+20&160&\multicolumn{32}{c|}{Options (if Data Offset $>$ 5,
+padded at end with ``0'' bytes if necessary)}\\
+\ldots&\ldots&\multicolumn{32}{c|}{\ldots}\\
+\hline
+\end{tabular}
+\end{table}
+\end{landscape}
+\end{document}
+
+% vim: set sw=2 et:
