@@ -2,7 +2,6 @@
 \documentclass[UTF8,nofonts,a4paper,hyperref,fntef]{ctexart}
 \usepackage{fontspec}
 \usepackage{xunicode,xltxtra} % for XeTeX logo
-%\usepackage{xeCJK} % called by ctex automatically
 \usepackage{CJKulem}
 
 \usepackage{graphicx}
@@ -10,6 +9,8 @@
 \usepackage{siunitx}
 
 %\usepackage{natbib}
+
+% for making index
 %\usepackage{makeidx}
 %\makeindex
 
@@ -55,7 +56,7 @@ ItalicFont={KaiTi}]{SimSun}
 \newcommand*{\lishu}{\CJKfamily{zhli}}    % 隶书
 \newcommand*{\youyuan}{\CJKfamily{zhyou}} % 幼圆
 
-% stolen from thuthesis.dtx
+% taken from thuthesis.dtx
 \renewcommand\contentsname{目\hspace{1em}录}
 \renewcommand\listfigurename{插图索引}
 \renewcommand\listtablename{表格索引}
@@ -83,8 +84,6 @@ unicode=true,
 }
 
 \punctstyle{kaiming}
-%\xeCJKsetcharclass{"0}{"2E7F}{0}
-%\xeCJKsetcharclass{"2E80}{"FFFF}{1}
 
 \begin{document}
 
@@ -96,7 +95,6 @@ unicode=true,
 \date{\small \today}
 \maketitle
 %\newcommand{\ans }{\textbf{答：}}
-%\newcommand{\unit}[1]{\;\mathrm{#1}}
 
 %\tableofcontents
 
@@ -106,11 +104,11 @@ unicode=true,
 \index{rule}xx\rule[0.5ex]{1in}{1pt}xx: 1 inch
 
 xx\rule{1cm}{1pt}xx: 1 cm
-%\def\pangram{The five boxing wizards jump quickly.\\}
+
 \section{math}
-%\[
-%  \lim_{x \to a} \frac{f(x) - f(a)}{x - a}
-%\]
+\[
+  \lim_{x \to a} \frac{f(x) - f(a)}{x - a}
+\]
 
 {\boldmath
 $$ X \rightarrow \mathrm{X} \rightarrow \mathbf{X} $$
