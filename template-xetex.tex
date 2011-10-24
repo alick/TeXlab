@@ -5,9 +5,11 @@
 \usepackage{CJKulem}
 
 \usepackage{graphicx}
+% useful when you have a separate fig dir
 %\graphicspath{{dir/}}
 \usepackage{siunitx}
 
+% bib related
 %\usepackage{natbib}
 
 % for making index
@@ -15,6 +17,7 @@
 %\makeindex
 
 \usepackage{xcolor} % 使用颜色宏包
+% for typesetting source code
 \usepackage{listings}
 \lstset{
 language=,
@@ -34,6 +37,7 @@ frame=shadowbox,
 %escapeinside=``
 }
 
+% 中文字体设置
 \setCJKmainfont[BoldFont={SimHei},
 ItalicFont={KaiTi}]{SimSun}
 \setCJKsansfont{SimHei}
@@ -77,12 +81,13 @@ ItalicFont={KaiTi}]{SimSun}
 %\item[]}{\end{list}}
 
 \hypersetup{
-pdfauthor={alick},
+pdfauthor={PDFAUTHOR},
 pdfsubject={report},
 pdfkeywords={},
 unicode=true,
 }
 
+% 标点压缩规则
 \punctstyle{kaiming}
 
 \begin{document}
@@ -91,7 +96,7 @@ unicode=true,
 \hypersetup{pdftitle={\thetitle}}
 
 \title{\bfseries \thetitle}
-\author{alick}
+\author{AUTHOR}
 \date{\small \today}
 \maketitle
 %\newcommand{\ans }{\textbf{答：}}
