@@ -38,13 +38,11 @@ frame=shadowbox,
 }
 
 % 中文字体设置
+% 这里使用了中易的六种常用字体
 \setCJKmainfont[BoldFont={SimHei},
 ItalicFont={KaiTi}]{SimSun}
 \setCJKsansfont{SimHei}
 \setCJKmonofont{FangSong}
-
-\XeTeXlinebreaklocale "zh"
-\XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
 
 \setCJKfamilyfont{zhsong}{SimSun}
 \setCJKfamilyfont{zhhei}{SimHei}
@@ -59,6 +57,9 @@ ItalicFont={KaiTi}]{SimSun}
 \newcommand*{\fangsong}{\CJKfamily{zhfs}} % 仿宋
 \newcommand*{\lishu}{\CJKfamily{zhli}}    % 隶书
 \newcommand*{\youyuan}{\CJKfamily{zhyou}} % 幼圆
+
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
 
 % taken from thuthesis.dtx
 \renewcommand\contentsname{目\hspace{1em}录}
