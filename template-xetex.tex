@@ -1,13 +1,14 @@
 %# -*- coding: utf-8 -*-
 \documentclass[UTF8,nofonts,a4paper,hyperref,fntef]{ctexart}
 \usepackage{fontspec}
-\usepackage{xunicode,xltxtra} % for XeTeX logo
-\usepackage{CJKulem}
+% xunicode auto loaded by fontspec since fontspec v2.1
+%\usepackage{xltxtra} % \XeTeX give the XeTeX logo
+%\usepackage{CJKulem} % ulem with CJK char
 
-\usepackage{graphicx}
+\usepackage{graphicx} % 提供包含图片的支持
 % useful when you have a separate fig dir
-%\graphicspath{{dir/}}
-\usepackage{siunitx}
+%\graphicspath{{figdir/}}
+\usepackage{siunitx} % SI 国际单位制
 
 % bib related
 %\usepackage{natbib}
@@ -21,24 +22,25 @@
 \usepackage{listings}
 \lstset{
 language=,
-%numbers=left,
-%numberstyle=\tiny,
+% several common used languages: C,C++,Matlab...
 tabsize=8,
 upquote=true,
 breaklines=true,
 showspaces=false,
 showstringspaces=false,
-keywordstyle=\color{blue!70},
-commentstyle=\color{red!50!green!50!blue!50},
-%stringstyle=\rmfamily\slshape\color[RGB]{128,0,0},
-stringstyle=\ttfamily\slshape\color[RGB]{128,0,0},
+basicstyle=\ttfamily,
+keywordstyle=\color[rgb]{0,0,1},
+commentstyle=\color[rgb]{0.133,0.545,0.133},
+stringstyle=\color[rgb]{0.627,0.126,0.941},
 rulesepcolor=\color{red!20!green!20!blue!20},
-frame=shadowbox,
+%numbers=left,
+%numberstyle=\tiny,
+%frame=shadowbox,
 %escapeinside=``
 }
 
 % 中文字体设置
-% 这里使用了中易的六种常用字体
+% 这里使用了中易的六种字体
 \setCJKmainfont[BoldFont={SimHei},
 ItalicFont={KaiTi}]{SimSun}
 \setCJKsansfont{SimHei}
@@ -70,7 +72,7 @@ ItalicFont={KaiTi}]{SimSun}
 \renewcommand\figurename{图}
 \renewcommand\tablename{表}
 
-% for wide figure
+% 用于放置很宽的图片
 %\newenvironment{narrow}[2]{% 
 %\begin{list}{}{%
 %\setlength{\topsep}{0pt}% 
@@ -100,7 +102,6 @@ unicode=true,
 \author{AUTHOR}
 \date{\small \today}
 \maketitle
-%\newcommand{\ans }{\textbf{答：}}
 
 %\tableofcontents
 
