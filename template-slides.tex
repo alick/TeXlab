@@ -1,0 +1,195 @@
+\documentclass{beamer}
+% Author: alick<alick9188@gmail.com>
+% 带中文支持的、使用 Beamer 的幻灯片模板
+% 使用 xelatex 编译
+
+% This file is modified from a solution template for:
+
+% - Giving a talk on some subject.
+% - The talk is between 15min and 45min long.
+% - Style is ornate.
+
+% Copyright 2004 by Till Tantau <tantau@users.sourceforge.net>.
+%
+% In principle, this file can be redistributed and/or modified under
+% the terms of the GNU Public License, version 2.
+%
+% However, this file is supposed to be a template to be modified
+% for your own needs. For this reason, if you use this file as a
+% template and not specifically distribute it as part of a another
+% package/program, I grant the extra permission to freely copy and
+% modify this file as you see fit and even to delete this copyright
+% notice.
+
+\mode<presentation>
+{
+\usetheme[secheader]{Boadilla}
+\setbeamercovered{transparent}
+}
+
+\usepackage{graphicx} % includegraphics support
+%\graphicspath{{fig/}} % directories that hold graphics
+\usepackage{listings} % for typesetting source code
+\usepackage{amsmath} % for math
+\usepackage{siunitx} % for si units
+\usepackage{fontspec}
+\usepackage{xunicode,xltxtra}
+\usepackage[CJKchecksingle]{xeCJK}
+
+% xeCJK conf setup
+\punctstyle{kaiming}
+\renewcommand\CJKfamilydefault{\CJKsfdefault} % for slides
+
+\setCJKmainfont[BoldFont={WenQuanYi Micro Hei},
+ItalicFont={AR PL UKai CN}]{AR PL UMing CN}
+\setCJKsansfont{WenQuanYi Micro Hei}
+\setCJKmonofont+{WenQuanYi Micro Hei Mono}
+
+\setCJKfamilyfont{zhsong}{AR PL UMing CN}
+\setCJKfamilyfont{zhhei}{WenQuanYi Zen Hei}
+\setCJKfamilyfont{zhkai}{AR PL UKai CN}
+
+\newcommand*{\songti}{\CJKfamily{zhsong}} % 宋体
+\newcommand*{\heiti}{\CJKfamily{zhhei}}   % 黑体
+\newcommand*{\kaishu}{\CJKfamily{zhkai}}  % 楷书
+
+\renewcommand\tablename{表格}
+
+% fix: navi button not working with XeTeX
+% SEE: http://bbs.ctex.org/viewthread.php?tid=64104
+\makeatletter
+\def\beamer@linkspace#1{%
+\begin{pgfpicture}{0pt}{-1.5pt}{#1}{5.5pt}
+\pgfsetfillopacity{0}
+\pgftext[x=0pt,y=-1.5pt]{.}
+\pgftext[x=#1,y=5.5pt]{.}
+\end{pgfpicture}}
+\makeatother
+
+\title
+{TITLE}
+
+\author[short] % (optional, use only with lots of authors)
+{AUTHOR}
+
+\institute[short] % (optional, but mostly needed)
+{
+Department of FOO\\
+BAR University
+}
+% - Use the \inst command only if there are several affiliations.
+% - Keep it simple, no one is interested in your street address.
+
+\date % (optional)
+{\today}
+
+\subject{Talks}
+
+% Delete this, if you do not want the table of contents to pop up at
+% the beginning of each subsection:
+%\AtBeginSubsection[]
+%{
+%  \begin{frame}<beamer>{Outline}
+%    \tableofcontents[currentsection,currentsubsection]
+%  \end{frame}
+%}
+
+
+% If you wish to uncover everything in a step-wise fashion, uncomment
+% the following command:
+
+%\beamerdefaultoverlayspecification{<+->}
+
+% listings setup
+\lstset{basicstyle=\ttfamily,breaklines=true}
+% hyperref setup
+\hypersetup{
+%pdfpagemode=FullScreen,
+}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+\tableofcontents
+% You might wish to add the option [pausesections]
+\end{frame}
+
+
+% Since this a solution template for a generic talk, very little can
+% be said about how it should be structured. However, the talk length
+% of between 15min and 45min and the theme suggest that you stick to
+% the following rules:
+
+% - Exactly two or three sections (other than the summary).
+% - At *most* three subsections per section.
+% - Talk about 30s to 2min per frame. So there should be between about
+%   15 and 30 frames, all told.
+
+\section{Introduction}
+
+\begin{frame}{Picture}
+%  \begin{figure}[h]
+%    \centering
+%    \includegraphics[scale=0.4]{foo.png}
+%    \caption{}
+%  \end{figure}
+\end{frame}
+
+%\begin{frame}{Why \TeX\ (and why not)?}
+%  \begin{columns}[t]
+%    \begin{column}{.45\textwidth}
+%      \begin{block}{Pros}
+%        \begin{itemize}
+%          \item allow focusing on the content without bothering the
+%            layout(including TOC, references, etc)
+%          \item excel in typesetting math formular
+%          \item enhanced in many aspects
+%        \end{itemize}
+%      \end{block}
+%    \end{column}
+%
+%    \begin{column}{.45\textwidth}
+%      \begin{block}{Cons}
+%        \begin{itemize}
+%          \item not WYSIWYG
+%          \item not easy to be \TeX{}pert
+%            \bigskip
+%          \item only .doc permitted
+%        \end{itemize}
+%      \end{block}
+%    \end{column}
+%
+%  \end{columns}
+%\end{frame}
+
+\section{Important Stuff}
+\subsection{first}
+\begin{frame}{FRAME TITLE}
+\end{frame}
+\subsection{second}
+
+
+\section*{Summary}
+
+\begin{frame}{Summary}
+\end{frame}
+
+%\appendix
+%\section<presentation>*{\appendixname}
+%\subsection<presentation>*{References}
+%
+%\begin{frame}[allowframebreaks]
+%  \frametitle<presentation>{References}
+%
+%  \bibliographystyle{thubib}
+%  \def\thudot{}
+%  \bibliography{refs}
+%
+%\end{frame}
+
+\end{document}
+%%% vim: set sw=2 isk+=\: et tw=70 formatoptions+=mM:
