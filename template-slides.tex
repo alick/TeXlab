@@ -1,4 +1,5 @@
-\documentclass{beamer}
+\documentclass[CJKchecksingle]{beamer}
+% pass CJKchecksingle to xeCJK
 % Author: alick<alick9188@gmail.com>
 % 带中文支持的、使用 Beamer 的幻灯片模板
 % 使用 xelatex 编译
@@ -32,9 +33,12 @@
 \usepackage{listings} % for typesetting source code
 \usepackage{amsmath} % for math
 \usepackage{siunitx} % for si units
+
 \usepackage{fontspec}
-\usepackage{xunicode,xltxtra}
-\usepackage[CJKchecksingle]{xeCJK}
+% xunicode auto loaded by fontspec since fontspec v2.1
+%\usepackage{xunicode}
+%\usepackage{xltxtra} % \XeTeX gives XeTeX logo
+\usepackage[UTF8,nofonts]{ctex}
 
 % xeCJK conf setup
 \punctstyle{kaiming}
@@ -67,7 +71,7 @@ ItalicFont={AR PL UKai CN}]{AR PL UMing CN}
 \makeatother
 
 \title
-{TITLE}
+{我的新成果}
 
 \author[short] % (optional, use only with lots of authors)
 {AUTHOR}
@@ -129,7 +133,7 @@ BAR University
 % - Talk about 30s to 2min per frame. So there should be between about
 %   15 and 30 frames, all told.
 
-\section{Introduction}
+\section{背景}
 
 \begin{frame}{Picture}
 %  \begin{figure}[h]
@@ -166,14 +170,14 @@ BAR University
 %  \end{columns}
 %\end{frame}
 
-\section{Important Stuff}
+\section{系统建模}
 \subsection{first}
 \begin{frame}{FRAME TITLE}
 \end{frame}
 \subsection{second}
 
 
-\section*{Summary}
+\section*{总结}
 
 \begin{frame}{Summary}
 \end{frame}
