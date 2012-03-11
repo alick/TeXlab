@@ -1,0 +1,30 @@
+\documentclass{article}
+% A Test to use hyperxmp package to include license info into the pdf file.
+% The pdf file can be produced by pdflatex/xelatex.
+% The license info can be seen in
+% * Evince(File--Properties) (of a new version, v3.2.1 on Fedora 16 is ok).
+
+% See also the hyperxmp package's doc by 'texdoc hyperxmp'.
+
+% License of this tex file:
+%  Copying and distribution of this file, with or without modification,
+%  are permitted in any medium without royalty provided the copyright
+%  notice and this notice are preserved.  This file is offered as-is,
+%  without any warranty.
+
+\title{Hyperxmp Tests}
+\author{Foo Bar}
+\usepackage{hyperref}
+\usepackage{hyperxmp}
+\hypersetup{
+pdfauthor={Foo Bar},
+pdfcopyright={Copyright (C) 2012 by Foo Bar.
+Licensed under CC-BY-NC-SA 3.0. Some rights reserved.},
+pdflicenseurl={http://creativecommons.org/licenses/by-nc-sa/3.0/},
+}
+\usepackage{lipsum}
+
+\begin{document}
+\maketitle
+\lipsum
+\end{document}
