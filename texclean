@@ -1,0 +1,25 @@
+#!/bin/sh
+
+# 清除tex的中间文件
+
+rm -f \
+	*.nav \
+	*.snm \
+	*.aux \
+	*.bbl \
+	*.blg \
+	*.dvi \
+	*.glo \
+	*.gls \
+	*.idx \
+	*.ilg \
+	*.ind \
+	*.ist \
+	*.log \
+	*.out \
+	*.ps \
+	*.thm \
+	*.toc \
+	*.lof \
+	*.lot \
+	*.loe
