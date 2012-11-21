@@ -22,4 +22,6 @@ rm -f \
 	*.toc \
 	*.lof \
 	*.lot \
-	*.loe
+	*.loe \
+	*.bcf \
+	*.run.xml
