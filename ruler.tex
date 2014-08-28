@@ -1,0 +1,36 @@
+%        File: ruler.tex
+%     Created: 一 8月 25 07:00 下午 2014 C
+% Last Change: 一 8月 25 07:00 下午 2014 C
+%
+\documentclass[a4paper]{article}
+%\usepackage{asymptote}
+\begin{document}
+
+3~cm: \rule{3cm}{1pt}
+
+% Not exact. has additional spaces
+\fbox{%
+\begin{minipage}[t]{3cm}
+\hfill\vspace{4cm}
+\end{minipage}
+}
+
+% LaTeX picture env seems right.
+\setlength{\unitlength}{1cm}
+\begin{picture}(5,5)
+  \put(0,0){\framebox(3,4){$3\times4$}}
+\end{picture}
+
+% We can also use asymptote to draw it.
+%\begin{asy}
+%real height = 4.5cm;
+%real width = 3.5cm;
+%pair O = (0,0);
+%pair A = O + (width, 0);
+%pair C = O + (0, height);
+%pair B = O + (width, height);
+%draw(O -- A -- B -- C -- O);
+%label("3.5 x 4.5", (O+B)/2);
+%\end{asy}
+\end{document}
+% vim: set sw=2 et:
