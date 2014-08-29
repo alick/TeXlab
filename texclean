@@ -1,6 +1,11 @@
 #!/bin/sh
 
 # 清除tex的中间文件
+# 不推荐使用本脚本了，
+# 可以用 `latexmk -c tex源文件名` 命令替代。
+
+# Deprecated!
+# `latexmk -c texfile` seems good enough.
 
 rm -f \
 	*.nav \
