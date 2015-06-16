@@ -1,13 +1,19 @@
-\documentclass{ctexart}
+%# -*- coding: utf-8 -*-
 % 简单的中文测试。
-% 使用 xelatex 编译。
+% UTF-8 编码，使用 xelatex 编译。
+
+% 使用默认中文字体。
+\documentclass{ctexart}
+% 中文字体使用文鼎宋体、楷体和文泉驿正黑。
+%\documentclass[fontset=ubuntu]{ctexart}
+% 自定义字体设置。
+%\documentclass[fontset=none]{ctexart}
 
 % 可用的中文字体可以从命令
 %   fc-list :lang=zh
 % 的输出中选取。
-\setCJKmainfont{WenQuanYi Zen Hei} % 使用文泉驿正黑
-%\setCJKmainfont{AR PL UMing CN} % 使用 UMing 作为正文字体
 %\setCJKmainfont{SimSun} % 使用中易宋体
+
 \begin{document}
 \TeX{}你好！
 \end{document}
