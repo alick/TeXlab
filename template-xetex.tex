@@ -1,6 +1,7 @@
 %# -*- coding: utf-8 -*-
-\documentclass[UTF8,nofonts,a4paper,hyperref,fntef]{ctexart}
+\documentclass[UTF8,a4paper]{ctexart}
 \usepackage{fontspec}
+\usepackage{hyperref}
 
 \usepackage{graphicx} % 提供包含图片的支持
 % useful when you have a separate fig dir
@@ -35,36 +36,6 @@ rulesepcolor=\color{red!20!green!20!blue!20},
 %frame=shadowbox,
 %escapeinside=``
 }
-
-% 中文字体设置
-% 这里使用了中易的六种字体
-\setCJKmainfont[BoldFont={SimHei},
-ItalicFont={KaiTi}]{SimSun}
-\setCJKsansfont{SimHei}
-\setCJKmonofont{FangSong}
-
-\setCJKfamilyfont{zhsong}{SimSun}
-\setCJKfamilyfont{zhhei}{SimHei}
-\setCJKfamilyfont{zhkai}{KaiTi}
-\setCJKfamilyfont{zhfs}{FangSong}
-\setCJKfamilyfont{zhli}{LiSu}
-\setCJKfamilyfont{zhyou}{YouYuan}
-
-\newcommand*{\songti}{\CJKfamily{zhsong}} % 宋体
-\newcommand*{\heiti}{\CJKfamily{zhhei}}   % 黑体
-\newcommand*{\kaishu}{\CJKfamily{zhkai}}  % 楷书
-\newcommand*{\fangsong}{\CJKfamily{zhfs}} % 仿宋
-\newcommand*{\lishu}{\CJKfamily{zhli}}    % 隶书
-\newcommand*{\youyuan}{\CJKfamily{zhyou}} % 幼圆
-
-% taken from thuthesis.dtx
-\renewcommand\contentsname{目\hspace{1em}录}
-\renewcommand\listfigurename{插图索引}
-\renewcommand\listtablename{表格索引}
-%\renewcommand\bibname{参考文献}
-\renewcommand\indexname{索引}
-\renewcommand\figurename{图}
-\renewcommand\tablename{表}
 
 % 用于放置很宽的图片
 %\newenvironment{narrow}[2]{%
@@ -159,4 +130,4 @@ $$ X \rightarrow \mathrm{X} \rightarrow \mathbf{X} $$
 %%% mode: latex
 %%% TeX-master: t
 %%% End:
-%%% vim: set sw=2 isk+=\: et tw=70 formatoptions+=mB:
+%%% vim: set sw=2 isk+=\: et tw=70 cc=+1 formatoptions+=mB:
