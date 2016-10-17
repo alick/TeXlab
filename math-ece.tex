@@ -1,0 +1,192 @@
+% Mathematical macros useful for Eletrical and Computer Engineering.
+\documentclass{article}
+\usepackage{etoolbox}
+\usepackage{hyperref}
+\usepackage{siunitx}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{mathtools}
+\mathtoolsset{centercolon} % Vertically centered := and =:
+
+% for making index
+%\usepackage{makeidx}
+%\makeindex
+
+\usepackage{xcolor}
+
+\hypersetup{
+pdfauthor={Alick Zhao},
+pdfsubject={math},
+pdfkeywords={},
+unicode=true,
+}
+
+\begin{document}
+
+\newcommand{\thetitle }{Mathematical Macros Useful for Eletrical and Computer Engineering}
+\hypersetup{pdftitle={\thetitle}}
+
+\title{\bfseries \thetitle}
+\author{Alick Zhao}
+\date{\small \today}
+\maketitle
+
+%\tableofcontents
+
+%\[
+%  \lim_{x \to a} \frac{f(x) - f(a)}{x - a}
+%\]
+
+\section{Elementary}
+
+% cf. `texdoc mathtools`
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+
+Absolute values:
+
+\[
+\abs*{\frac{a}{b}}
+\]
+
+\[
+\abs[\Bigg]{\frac{a}{b}}
+\]
+
+\newcommand*{\e}{\mathrm{e}}
+\newcommand*{\ii}{\mathrm{i}}
+\newcommand*{\jj}{\mathrm{j}}
+Euler formula:
+\[
+\e^{\ii \pi} + 1 = 0
+\]
+
+Logarithm:
+\[
+P_\text{\si{dB}} = 10 \log_{10} P
+\]
+\[
+\ln (1+x) \approx x
+\]
+\[
+C = W \log_2 ( 1+ \text{SINR})
+\]
+
+\section{Sets}
+
+% cf. `texdoc mathtools`
+% just to make sure it exists
+\providecommand\given{}
+% can be useful to refer to this outside \Set
+\newcommand\SetSymbol[1][]{%
+\nonscript\:#1\vert
+\allowbreak
+\nonscript\:
+\mathopen{}}
+\DeclarePairedDelimiterX\Set[1]\{\}{%
+\renewcommand\given{\SetSymbol[\delimsize]}
+#1
+}
+
+\[
+\Set{1, 2, 3, \dotsc, 10}
+\]
+
+\[
+\Set*{ x \in X \given \frac{\sqrt{x}}{x^2+1} > 1 }
+\]
+
+
+\section{Calculus}
+
+\renewcommand*{\d}{\mathrm{d}}
+
+\[
+\frac{\d y}{\d x}
+\]
+
+\[
+\int_{0}^{\infty} \e^{-t} \d t
+\]
+
+\section{Probability}
+
+\renewcommand*{\P}{\mathbb{P}\probarg}
+\DeclarePairedDelimiterX{\probarg}[1]{\{}{\}}{%
+  \ifnum\currentgrouptype=16 \else\begingroup\fi
+  \activatebar#1
+  \ifnum\currentgrouptype=16 \else\endgroup\fi
+}
+% Based on http://tex.stackexchange.com/a/187363/24521
+\newcommand*{\E}{\operatorname{E}\expectarg}
+\DeclarePairedDelimiterX{\expectarg}[1]{[}{]}{%
+  \ifnum\currentgrouptype=16 \else\begingroup\fi
+  \activatebar#1
+  \ifnum\currentgrouptype=16 \else\endgroup\fi
+}
+
+\newcommand{\innermid}{\nonscript\;\delimsize\vert\nonscript\;}
+\newcommand{\activatebar}{%
+  \begingroup\lccode`\~=`\|
+  \lowercase{\endgroup\let~}\innermid 
+  \mathcode`|=\string"8000
+}
+
+Probabilities in the \LaTeXe\ way: $\Pr\{X > 1\}$ v.s.
+\verb|mathbb| way: $\P{X>1}$.
+
+Expectations: $\E{X}$, $\E{X|Y}$, $\E[\big]{X|Y}$, and
+\[
+\E*{\frac{1}{2} X | Y}
+\]
+
+\section{Vectors}
+
+\let\arrvec\vec
+\renewcommand*{\vec}{\bm}
+
+Vector with an arrow $\arrvec{a}$ v.s. in bold $\vec{a}$.
+
+Dot (Inner) products:
+
+\DeclarePairedDelimiterX\dotprod[2]{\langle}{\rangle}{#1,#2}
+
+\[
+\dotprod*{A}{\frac{1}{2}}
+\]
+
+% Require package: etoolbox
+\DeclarePairedDelimiterX\norm[1]\lVert\rVert{
+\ifblank{#1}{\:\cdot\:}{#1}
+}
+
+Norms: $\norm{}$, $\norm{\vec{a}}$, $\norm{w}_{\vec{g}}^2$
+
+\section{Bold Math}
+
+{\boldmath
+$$ X \rightarrow \mathrm{X} \rightarrow \mathbf{X} $$
+}
+
+\section{Definitions}
+\[
+a := b
+\]
+
+\appendix
+
+%\printindex
+
+%\bibliographystyle{thubib}
+%\def\thudot{}
+%\bibliography{myrefs}
+
+\end{document}
+%%% Local Variables:
+%%% coding: utf-8
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
+%%% vim: set sw=2 isk+=\: et tw=70 cc=+1 formatoptions+=mB:
