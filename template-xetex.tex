@@ -1,6 +1,17 @@
 %# -*- coding: utf-8 -*-
-\documentclass[UTF8,a4paper]{ctexart}
+\documentclass[UTF8,a4paper,fontset=none]{ctexart}
 \usepackage{fontspec}
+
+\setCJKmainfont
+  [BoldFont =SourceHanSansCN-Regular]{SourceHanSerifCN-Regular}
+\setCJKsansfont{SourceHanSansCN-Regular}
+\setCJKfamilyfont { zhsong }
+   {SourceHanSerifCN-Regular}
+\setCJKfamilyfont { zhhei }
+   {SourceHanSansCN-Regular}
+\NewDocumentCommand \songti   { } { \CJKfamily { zhsong } }
+\NewDocumentCommand \heiti    { } { \CJKfamily { zhhei } }
+
 \usepackage{hyperref}
 
 \usepackage{graphicx} % 提供包含图片的支持
