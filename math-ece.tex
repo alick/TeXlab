@@ -8,6 +8,7 @@
 \usepackage{amsthm}
 \usepackage{amssymb}
 \usepackage{bm}
+\usepackage{bbm}
 \usepackage{mathtools}
 \mathtoolsset{centercolon} % Vertically centered := and =:
 
@@ -55,9 +56,9 @@ Absolute values:
 \abs[\Bigg]{\frac{a}{b}}
 \]
 
-\newcommand*{\e}{\mathrm{e}}
-\newcommand*{\ii}{\mathrm{i}}
-\newcommand*{\jj}{\mathrm{j}}
+\newcommand*{\e}{\ensuremath{\mathrm{e}}}
+\newcommand*{\ii}{\ensuremath{\mathrm{i}}}
+\newcommand*{\jj}{\ensuremath{\mathrm{j}}}
 Euler formula:
 \[
 \e^{\ii \pi} + 1 = 0
@@ -91,24 +92,84 @@ C = W \log_2 ( 1+ \text{SINR})
 }
 
 \[
-\Set{1, 2, 3, \dotsc, 10}
+S = \Set{1, 2, 3, \dotsc, 10}.
 \]
 
 \[
 \Set*{ x \in X \given \frac{\sqrt{x}}{x^2+1} > 1 }
 \]
 
+\renewcommand*{\N}{\mathbb{N}}
+\newcommand*{\R}{\mathbb{R}}
+\newcommand*{\Z}{\mathbb{Z}}
+
+\renewcommand*{\emptyset}{\varnothing}
+
+Special sets:
+$\N, \Z, \R$, $\emptyset$.
+
+% Require package: etoolbox
+\DeclarePairedDelimiterX\card[1]\lvert\rvert{
+\ifblank{#1}{\:\cdot\:}{#1}
+}
+
+Cardinality: $\card{}$
+\[
+\card{S} = 10
+\]
+
+\newcommand*{\union}{\cup}
+\newcommand*{\intersect}{\cap}
+
+Set operations: $A\intersect B$, $A \union B$
 
 \section{Calculus}
 
-\renewcommand*{\d}{\mathrm{d}}
+% cf. https://www.tug.org/TUGboat/Articles/tb18-1/tb54becc.pdf
+\makeatletter
+\newcommand*{\diff}%
+  {\@ifnextchar^{\DIfF}{\DIfF^{}}}
+\makeatother
+\def\DIfF^#1{%
+  \mathop{\mathrm{\mathstrut d}}%
+  \nolimits^{#1}\gobblespace}
+\def\gobblespace{%
+  \futurelet\diffarg\opspace}
+\def\opspace{%
+  \let\DiffSpace\!%
+  \ifx\diffarg(%
+    \let\DiffSpace\relax
+  \else
+    \ifx\diffarg[%
+      \let\DiffSpace\relax
+    \else
+      \ifx\diffarg\{%
+        \let\DiffSpace\relax
+      \fi%
+    \fi%
+  \fi%
+  \DiffSpace}
+\makeatother
+\newcommand*{\deriv}[3][]{%
+  \frac{\diff^{#1}#2}{\diff #3^{#1}}}
+\newcommand*{\pderiv}[3][]{%
+  \frac{\partial^{#1}#2}%
+  {\partial #3^{#1}}}
 
 \[
-\frac{\d y}{\d x}
+a\deriv[2]{y}{x} + b \deriv{y}{x} + c = f(x)
 \]
 
 \[
-\int_{0}^{\infty} \e^{-t} \d t
+\deriv{(\log y)}{x} = \frac{1}{y}\deriv{y}{x}
+\]
+
+\[
+\diff{z(x,y)} = \pderiv{z}{x}\diff x + \pderiv{z}{y}\diff y
+\]
+
+\[
+\int_{0}^{\infty} \e^{-t} \diff t
 \]
 
 \section{Probability}
@@ -140,6 +201,12 @@ Probabilities in the \LaTeXe\ way: $\Pr\{X > 1\}$ v.s.
 Expectations: $\E{X}$, $\E{X|Y}$, $\E[\big]{X|Y}$, and
 \[
 \E*{\frac{1}{2} X | Y}
+\]
+
+\newcommand*{\Ind}[1]{\mathbbm{1}\{#1\}}
+
+\[
+\Ind{\text{Something happens}}
 \]
 
 \section{Vectors}
